@@ -1,0 +1,516 @@
+/* Modern Streamlit App Styles - Customer Spending Predictor */
+/* Author: Mishal Al-Shammari */
+
+/* Root Variables for Theme Colors */
+:root {
+  --light-bg: #f8fafc;
+  --light-card: #ffffff;
+  --light-text: #1e293b;
+  --light-text-secondary: #475569;
+  --light-border: #e2e8f0;
+  --light-hover: #f1f5f9;
+
+  --dark-bg: #0f172a;
+  --dark-card: #1e293b;
+  --dark-text: #f1f5f9;
+  --dark-text-secondary: #cbd5e1;
+  --dark-border: #334155;
+  --dark-hover: #2d3748;
+
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #06b6d4;
+}
+
+/* Light Mode Styles */
+.light-mode {
+  background-color: var(--light-bg) !important;
+  color: var(--light-text) !important;
+}
+
+.light-mode .stApp {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.light-mode [data-testid="stSidebar"] {
+  background-color: var(--light-card) !important;
+  border-right: 2px solid var(--light-border) !important;
+}
+
+.light-mode [data-testid="stSidebar"] * {
+  color: var(--light-text) !important;
+}
+
+.light-mode .stSelectbox label,
+.light-mode .stSlider label,
+.light-mode .stNumberInput label {
+  color: var(--light-text) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+/* Light Mode Selectbox */
+.light-mode [data-baseweb="select"] {
+  background-color: var(--light-card) !important;
+  border: 2px solid var(--light-border) !important;
+  border-radius: 8px !important;
+}
+
+.light-mode [data-baseweb="select"] * {
+  color: var(--light-text) !important;
+  font-weight: 500 !important;
+}
+
+.light-mode [data-baseweb="popover"] {
+  background-color: var(--light-card) !important;
+  border: 2px solid var(--light-border) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-mode [role="option"] {
+  background-color: var(--light-card) !important;
+  color: var(--light-text) !important;
+  font-weight: 500 !important;
+  padding: 12px 16px !important;
+}
+
+.light-mode [role="option"]:hover {
+  background-color: var(--light-hover) !important;
+  color: var(--primary) !important;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .stApp {
+  background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%) !important;
+}
+
+.dark-mode [data-testid="stSidebar"] {
+  background-color: var(--dark-card) !important;
+  border-right: 2px solid var(--dark-border) !important;
+}
+
+.dark-mode [data-testid="stSidebar"] * {
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .stSelectbox label,
+.dark-mode .stSlider label,
+.dark-mode .stNumberInput label {
+  color: var(--dark-text) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+/* Dark Mode Selectbox - CRITICAL FIX */
+.dark-mode [data-baseweb="select"] {
+  background-color: var(--dark-card) !important;
+  border: 2px solid var(--dark-border) !important;
+  border-radius: 8px !important;
+}
+
+.dark-mode [data-baseweb="select"] > div {
+  background-color: var(--dark-card) !important;
+  color: var(--dark-text) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+.dark-mode [data-baseweb="select"] * {
+  color: var(--dark-text) !important;
+}
+
+/* Dark Mode Dropdown Menu */
+.dark-mode [data-baseweb="popover"] {
+  background-color: var(--dark-card) !important;
+  border: 2px solid var(--dark-border) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode [role="listbox"] {
+  background-color: var(--dark-card) !important;
+}
+
+.dark-mode [role="option"] {
+  background-color: var(--dark-card) !important;
+  color: var(--dark-text) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  padding: 14px 18px !important;
+  border-bottom: 1px solid var(--dark-border) !important;
+}
+
+.dark-mode [role="option"]:hover {
+  background-color: var(--dark-hover) !important;
+  color: var(--info) !important;
+  border-left: 4px solid var(--info) !important;
+}
+
+/* Sidebar Section Dividers */
+.sidebar-divider {
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent) !important;
+  margin: 24px 0 !important;
+  border: none !important;
+}
+
+.light-mode .sidebar-divider {
+  background: linear-gradient(90deg, transparent, var(--light-border), transparent) !important;
+}
+
+.dark-mode .sidebar-divider {
+  background: linear-gradient(90deg, transparent, var(--dark-border), transparent) !important;
+}
+
+/* Input Styling */
+.light-mode input[type="number"],
+.light-mode input[type="text"] {
+  background-color: var(--light-card) !important;
+  color: var(--light-text) !important;
+  border: 2px solid var(--light-border) !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+}
+
+.dark-mode input[type="number"],
+.dark-mode input[type="text"] {
+  background-color: var(--dark-card) !important;
+  color: var(--dark-text) !important;
+  border: 2px solid var(--dark-border) !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+}
+
+/* Button Styling */
+.stButton > button {
+  width: 100% !important;
+  border-radius: 12px !important;
+  padding: 16px 24px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-mode .stButton > button {
+  background: linear-gradient(135deg, var(--primary), #667eea) !important;
+  color: white !important;
+}
+
+.dark-mode .stButton > button {
+  background: linear-gradient(135deg, var(--info), var(--primary)) !important;
+  color: white !important;
+}
+
+.stButton > button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Slider Styling */
+.light-mode .stSlider > div > div > div {
+  background-color: var(--primary) !important;
+}
+
+.dark-mode .stSlider > div > div > div {
+  background-color: var(--info) !important;
+}
+
+/* Card Styling */
+.metric-card {
+  border-radius: 16px !important;
+  padding: 24px !important;
+  margin: 16px 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.light-mode .metric-card {
+  background-color: var(--light-card) !important;
+  border-color: var(--light-border) !important;
+}
+
+.dark-mode .metric-card {
+  background-color: var(--dark-card) !important;
+  border-color: var(--dark-border) !important;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Info Box Styling */
+.info-box {
+  border-radius: 12px !important;
+  padding: 20px !important;
+  margin: 16px 0 !important;
+  border-left: 4px solid var(--info) !important;
+}
+
+.light-mode .info-box {
+  background-color: #e0f2fe !important;
+  color: #0c4a6e !important;
+}
+
+.dark-mode .info-box {
+  background-color: rgba(6, 182, 212, 0.15) !important;
+  color: var(--info) !important;
+}
+
+/* Recommendation Cards */
+.rec-high {
+  border-left: 6px solid var(--success) !important;
+}
+
+.rec-medium {
+  border-left: 6px solid var(--warning) !important;
+}
+
+.rec-low {
+  border-left: 6px solid var(--danger) !important;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center !important;
+  padding: 24px !important;
+  margin-top: 48px !important;
+  border-top: 2px solid var(--light-border) !important;
+  font-size: 0.95rem !important;
+}
+
+.light-mode .footer {
+  background-color: var(--light-card) !important;
+  color: var(--light-text-secondary) !important;
+  border-top-color: var(--light-border) !important;
+}
+
+.dark-mode .footer {
+  background-color: var(--dark-card) !important;
+  color: var(--dark-text-secondary) !important;
+  border-top-color: var(--dark-border) !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .stButton > button {
+    padding: 14px 20px !important;
+    font-size: 1rem !important;
+  }
+
+  .metric-card {
+    padding: 16px !important;
+  }
+
+  [data-testid="stSidebar"] {
+    width: 100% !important;
+  }
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Scrollbar Styling */
+.light-mode ::-webkit-scrollbar-track {
+  background: var(--light-bg) !important;
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: var(--light-border) !important;
+  border-radius: 8px !important;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: var(--dark-bg) !important;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--dark-border) !important;
+  border-radius: 8px !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+/* Text Contrast Enhancement */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
+  color: var(--light-text) !important;
+  font-weight: 700 !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: var(--dark-text) !important;
+  font-weight: 700 !important;
+}
+
+/* Number Input +/- Buttons - High Visibility */
+.light-mode input[type="number"]::-webkit-inner-spin-button,
+.light-mode input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1 !important;
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 4px !important;
+  margin: 2px !important;
+  cursor: pointer !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.dark-mode input[type="number"]::-webkit-inner-spin-button,
+.dark-mode input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1 !important;
+  background-color: var(--info) !important;
+  color: white !important;
+  border-radius: 4px !important;
+  margin: 2px !important;
+  cursor: pointer !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Sidebar Collapse Button */
+[data-testid="collapsedControl"] {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border: 2px solid white !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 16px 8px !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  z-index: 999999 !important;
+  position: fixed !important;
+  left: 0 !important;
+  top: 80px !important;
+}
+
+.dark-mode [data-testid="collapsedControl"] {
+  background-color: var(--info) !important;
+  color: var(--dark-bg) !important;
+  border-color: var(--info) !important;
+}
+
+[data-testid="collapsedControl"]:hover {
+  transform: translateX(5px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  background-color: var(--primary-hover) !important;
+}
+
+.dark-mode [data-testid="collapsedControl"]:hover {
+  background-color: #0891b2 !important;
+}
+
+/* Enhanced Streamlit number input container for better button visibility */
+.light-mode [data-testid="stNumberInput"] > div {
+  background-color: var(--light-card) !important;
+  border: 2px solid var(--light-border) !important;
+  border-radius: 8px !important;
+  padding: 4px !important;
+}
+
+.dark-mode [data-testid="stNumberInput"] > div {
+  background-color: var(--dark-card) !important;
+  border: 2px solid var(--dark-border) !important;
+  border-radius: 8px !important;
+  padding: 4px !important;
+}
+
+/* Custom styling for number input buttons with SVG arrows */
+[data-testid="stNumberInput"] button {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  margin: 2px !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark-mode [data-testid="stNumberInput"] button {
+  background-color: var(--info) !important;
+}
+
+[data-testid="stNumberInput"] button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-testid="stNumberInput"] button svg {
+  fill: white !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Markdown Content */
+.light-mode .stMarkdown {
+  color: var(--light-text) !important;
+}
+
+.dark-mode .stMarkdown {
+  color: var(--dark-text) !important;
+}
+
+/* Table Styling */
+.light-mode table {
+  background-color: var(--light-card) !important;
+  color: var(--light-text) !important;
+}
+
+.light-mode thead tr {
+  background-color: var(--light-hover) !important;
+  color: var(--light-text) !important;
+}
+
+.dark-mode table {
+  background-color: var(--dark-card) !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode thead tr {
+  background-color: var(--dark-hover) !important;
+  color: var(--dark-text) !important;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-card {
+  animation: fadeIn 0.5s ease-out !important;
+}
